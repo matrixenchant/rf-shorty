@@ -1,1 +1,1 @@
-app-init: npm i
+web: npm run dev
