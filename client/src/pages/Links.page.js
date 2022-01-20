@@ -12,7 +12,7 @@ export const LinksPage = () => {
     const fetchedLinks = useCallback(async () => {
         try {
             const Authorization = `Bearer ${token}`
-            const data = await request('http://localhost:5000/api/link', 'GET', null, {Authorization})
+            const data = await request('/api/link', 'GET', null, {Authorization})
             setLinks(data)
         } catch (e) {}
     }, [token, request])

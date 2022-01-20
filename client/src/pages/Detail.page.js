@@ -14,7 +14,7 @@ export const DetailPage = () => {
     const getLink = useCallback(async () => {
         try {
             const Authorization = `Bearer ${token}`
-            const fetched = await request(`http://localhost:5000/api/link/${linkId}`, 'GET', null, {Authorization})
+            const fetched = await request(`/api/link/${linkId}`, 'GET', null, {Authorization})
             setLink(fetched)
         } catch (e) {}
     }, [token, linkId, request])

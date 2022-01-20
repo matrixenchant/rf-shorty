@@ -18,7 +18,7 @@ export const CreateLinkPage = () => {
     const pressHandler = async () => {
         try {
             const Authorization = `Bearer ${auth.token}`
-            const data = await request('http://localhost:5000/api/link/generate', 'POST', {from: link, name}, {Authorization})
+            const data = await request('/api/link/generate', 'POST', {from: link, name}, {Authorization})
             if (data.error === 'jwt expired') {
                 auth.logout()
                 M.toast({ html: 'Сеанс устарел, авторизуйтесь заново' })
